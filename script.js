@@ -133,7 +133,7 @@ function updateHint() {
   const messages = [
     '🕯️ 2 lilin lagi...',
     '🕯️ 1 lilin lagi...',
-    '🎉 Semua lilin padam! Yay!'
+    '🎉 Semua lilin padam! Yay!..Scroll ke bawah ya kak⬇️'
   ];
   hint.textContent = messages[clickCount - 1];
 }
