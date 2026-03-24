@@ -102,8 +102,6 @@ body {
 /* =============================================
    INDEX PAGE
    ============================================= */
-.main-page { }
-
 .main-wrapper {
   position: relative; z-index: 1;
   max-width: 700px; margin: 0 auto;
@@ -158,7 +156,6 @@ body {
   0%   { transform: translateY(0); }
   100% { transform: translateY(-4px); }
 }
-
 .cake-wrap {
   position: relative; cursor: pointer;
   transition: transform .15s;
@@ -166,7 +163,6 @@ body {
 }
 .cake-wrap:active { transform: scale(.97); }
 
-/* Glow under cake */
 .cake-glow {
   position: absolute; bottom: -20px; left: 50%;
   transform: translateX(-50%);
@@ -205,14 +201,11 @@ body {
   0%   { transform: scaleX(1)   scaleY(1)   rotate(-2deg); }
   100% { transform: scaleX(.85) scaleY(1.1) rotate(2deg); }
 }
-.flame.blown {
-  opacity: 0; transform: scaleX(0) scaleY(0);
-}
+.flame.blown { opacity: 0; transform: scaleX(0) scaleY(0); }
 
 .candle-body {
   width: 14px; height: 48px;
   border-radius: 3px;
-  position: relative;
 }
 .c-red  { background: linear-gradient(to right, #e04040, #b02020); }
 .c-gold { background: linear-gradient(to right, #f5c518, #c9950a); }
@@ -284,9 +277,7 @@ body {
   opacity: 0;
   pointer-events: none;
 }
-.ring.pop {
-  animation: ring-pop .6s ease-out forwards;
-}
+.ring.pop { animation: ring-pop .6s ease-out forwards; }
 .r1 { width: 60px;  height: 60px; }
 .r2 { width: 90px;  height: 90px;  border-color: var(--red); }
 .r3 { width: 120px; height: 120px; border-color: var(--warm); }
@@ -342,8 +333,6 @@ body {
 /* =============================================
    YES PAGE
    ============================================= */
-.yes-page { }
-
 .yes-wrapper {
   position: relative; z-index: 1;
   max-width: 780px; margin: 0 auto;
@@ -386,7 +375,9 @@ body {
   opacity: 1; transform: translateY(0);
 }
 
-/* Wanted card */
+/* =============================================
+   WANTED CARD
+   ============================================= */
 .wanted-card {
   background: var(--cream); color: var(--ink);
   border: 6px solid var(--dark-gold);
@@ -409,6 +400,7 @@ body {
   box-shadow: 0 0 16px rgba(213,40,40,.6);
 }
 @keyframes spin-seal { to { transform: rotate(360deg); } }
+
 .wanted-label {
   font-family: 'Pirata One', cursive;
   font-size: 2.4rem; letter-spacing: 6px;
@@ -421,14 +413,30 @@ body {
   font-size: 2rem; color: var(--navy);
   margin: 12px 0 8px; letter-spacing: 2px;
 }
+
+/* ===== FOTO WRAPPER — square close-up (miranda.png) ===== */
 .wanted-img-wrap {
-  width: 130px; height: 130px;
-  margin: 10px auto;
-  border: 4px solid var(--dark-gold); border-radius: 4px;
-  background: #ddd4b8;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 6rem;
+  width: 100%;
+  height: 360px;          /* square-ish karena foto 1:1 */
+  margin: 12px auto;
+  border: 4px solid var(--dark-gold);
+  border-radius: 6px;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.wanted-img-wrap img {
+  width: 100%;            /* melebar penuh karena foto square */
+  height: 100%;
+  object-fit: cover;      /* cover karena square, tidak ada ruang kosong */
+  object-position: center top; /* fokus ke wajah bagian atas */
+  display: block;
+}
+/* ===== END FOTO WRAPPER ===== */
+
 .wanted-desc { font-size: .82rem; color: #555; margin: 4px 0 2px; }
 .wanted-bounty {
   font-family: 'Pirata One', cursive;
@@ -437,7 +445,9 @@ body {
 }
 .wanted-bounty span { font-size: 1.7rem; color: var(--navy); }
 
-/* Scroll message */
+/* =============================================
+   SCROLL MESSAGE
+   ============================================= */
 .scroll-container {
   background: var(--cream); color: var(--ink);
   border: 5px solid var(--dark-gold); border-radius: 12px;
@@ -462,9 +472,12 @@ body {
   letter-spacing: 2px;
 }
 .scroll-body { font-size: 1rem; line-height: 1.9; }
+.scroll-body p { margin-bottom: 12px; }
 .scroll-body strong { color: var(--red); font-weight: 800; }
 
-/* Doa section */
+/* =============================================
+   DOA SECTION
+   ============================================= */
 .doa-section { width: 100%; max-width: 700px; margin: 0 auto 28px; }
 .doa-heading {
   font-family: 'Pirata One', cursive;
@@ -495,7 +508,9 @@ body {
 }
 .doa-text { font-size: .85rem; line-height: 1.6; color: #d9c9a8; }
 
-/* Final message */
+/* =============================================
+   FINAL MESSAGE
+   ============================================= */
 .final-msg { text-align: center; margin-top: 10px; }
 .ship-float {
   font-size: 4rem;
